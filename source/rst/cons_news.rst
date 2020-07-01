@@ -176,7 +176,7 @@ process with variance
 
 .. math::
 
-    \sigma_a^2 = \beta^{-1} \sigma_\epsilon^2 .
+    \sigma_a^2 = \beta^{-2} \sigma_\epsilon^2 .
 
 To verify these claims, just notice that
 :math:`g(z) = \beta^{-2} \sigma_\epsilon^2` implies that the coefficient
@@ -190,7 +190,7 @@ formula :eq:`eqn_3` according to
 .. math::
 
 
-   \sigma_a^2 = \sigma_\epsilon^2 + [ 1 + (\beta - \beta^{-1})^2 \sum_{j=0}^\infty \beta^{2j} ] = \beta^{-1} \sigma_\epsilon^2 .
+   \sigma_a^2 = [ 1 + (\beta - \beta^{-1})^2 \sum_{j=0}^\infty \beta^{2j} ] \sigma_\epsilon^2 = \beta^{-2} \sigma_\epsilon^2 .
 
 Application of Kalman filter
 ----------------------------
