@@ -740,7 +740,7 @@ Description and clarifications are given below
             ns = P.shape[0]
             F = scipy.linalg.inv(eye(ns) - β * P)
             a0 = 0.5 * (F @ (x_vals.T @ Sm.T)**2)[0]
-            H = ((Sb - Sd + Sg) @ x_vals) * ((Sg - Ss) @ x_vals)
+            H = ((Sb - Sd + Sg) @ x_vals) * ((Sg + Ss) @ x_vals)
             b0 = 0.5 * (F @ H.T)[0]
             a0, b0 = float(a0), float(b0)
         else:
@@ -784,7 +784,7 @@ Description and clarifications are given below
             B = temp[state] / p
             H = (P[state, :] @ x_vals.T @ (Sb - Sc).T).flatten()
             R = p / (β * H)
-            temp = ((P[state, :] @ x_vals.T @ (Sb - Sc).T)).flatten()
+            temp = (P[state, :] @ x_vals.T @ (Sb - Sc).T).flatten()
             ξ = p[1:] / temp[:T-1]
         else:
             H = Sl.T @ Sl - (Sb - Sc).T @ (Sl - Sg)
